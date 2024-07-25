@@ -31,11 +31,9 @@ let arrOperations = [...operations].map((operation) => {
         if (number1 === undefined) {
             number1 = +input;
             input = undefined;
-            console.log(number1);
         } else if (number2 === undefined && input !== undefined) {
             number2 = +input;
             input = undefined;
-            console.log(number2);
         }
 
         let canOperate = checkNumbersAndOperator();
@@ -48,7 +46,6 @@ equalSign.addEventListener('click', () => {
     if (number2 === undefined && input !== undefined) {
         number2 = +input;
         input = undefined;
-        console.log(number2);
     }
     let canOperate = checkNumbersAndOperator();
     if (canOperate) operate(number1, operator, number2);
@@ -68,7 +65,6 @@ function operate(number_1, operator, number_2) {
     switch (operator) {
         case '+':
             result = add(number_1, number_2);
-            console.log(result);
             displayResult.textContent = result;
             number1 = +result;
             operator = undefined;
@@ -76,7 +72,6 @@ function operate(number_1, operator, number_2) {
             break;
         case '-':
             result = substract(number_1, number_2);
-            console.log(result);
             displayResult.textContent = result;
             number1 = +result;
             operator = undefined;
@@ -84,7 +79,6 @@ function operate(number_1, operator, number_2) {
             break;
         case '*':
             result = multiply(number_1, number_2);
-            console.log(result);
             displayResult.textContent = result;
             number1 = +result;
             operator = undefined;
@@ -105,7 +99,7 @@ function operate(number_1, operator, number_2) {
             number2 = undefined;
             break;
         default:
-            console.log('UNKNOW OPERATION')
+            alert('UNKNOW OPERATION');
     }
 }
 
