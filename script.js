@@ -82,7 +82,11 @@ function operate(number_1, operator, number_2) {
             break;
         case '/':
             result = divide(number_1, number_2);
-            console.log(result);
+            if(typeof result === 'string') {
+                alert(result);
+                number2 = undefined;
+                break;
+            }
             displayResult.textContent = result;
             number1 = +result;
             operator = undefined;
