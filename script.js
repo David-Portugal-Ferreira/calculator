@@ -7,6 +7,7 @@ const displayResult = document.querySelector('.calculator-result');
 const calculatorNumbers = document.querySelectorAll('.number');
 const operations = document.querySelectorAll('.operations');
 const equalSign = document.querySelector('.equal');
+const acButton = document.querySelector('.ac');
 
 
 let arrNumbers = [...calculatorNumbers].map((button) => {
@@ -52,6 +53,15 @@ equalSign.addEventListener('click', () => {
     let canOperate = checkNumbersAndOperator();
     if (canOperate) operate(number1, operator, number2);
 })
+
+acButton.addEventListener('click', () => {
+    number1 = undefined;
+    number2 = undefined;
+    operator = undefined;
+    input = ' ';
+    displayResult.textContent = ' ';
+});
+
 
 function operate(number_1, operator, number_2) {
     let result;
