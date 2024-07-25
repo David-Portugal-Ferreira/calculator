@@ -84,7 +84,9 @@ function operate(number_1, operator, number_2) {
             result = divide(number_1, number_2);
             if(typeof result === 'string') {
                 alert(result);
+                number1 = undefined;
                 number2 = undefined;
+                input = undefined;
                 break;
             }
             displayResult.textContent = result;
