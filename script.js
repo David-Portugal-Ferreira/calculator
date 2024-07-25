@@ -91,6 +91,7 @@ function operate(number_1, operator, number_2) {
                 number1 = undefined;
                 number2 = undefined;
                 input = undefined;
+                displayResult.textContent = ' ';
                 break;
             }
             displayResult.textContent = result;
