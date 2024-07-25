@@ -52,7 +52,6 @@ equalSign.addEventListener('click', () => {
     if (number2 === undefined && input !== undefined) {
         number2 = +input;
         input = undefined;
-        disablePointButton();
     }
     let canOperate = checkNumbersAndOperator();
     if (canOperate) operate(number1, operator, number2);
