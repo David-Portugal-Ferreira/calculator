@@ -2,12 +2,14 @@ let number1;
 let operator;
 let number2;
 let input;
+let isDisabled = true;
 
 const displayResult = document.querySelector('.calculator-result');
 const calculatorNumbers = document.querySelectorAll('.number');
 const operations = document.querySelectorAll('.operations');
 const equalSign = document.querySelector('.equal');
 const acButton = document.querySelector('.ac');
+const pointButton = document.querySelector('.point');
 
 
 let arrNumbers = [...calculatorNumbers].map((button) => {
@@ -18,6 +20,10 @@ let arrNumbers = [...calculatorNumbers].map((button) => {
                 displayResult.textContent = input;
             }
             return;
+        }
+        let arr = input.split('');
+        if (arr.includes('.')) {
+            disablePointButton();
         }
         input += button.innerHTML;
         if (input !== undefined) {
@@ -46,6 +52,7 @@ equalSign.addEventListener('click', () => {
     if (number2 === undefined && input !== undefined) {
         number2 = +input;
         input = undefined;
+        disablePointButton();
     }
     let canOperate = checkNumbersAndOperator();
     if (canOperate) operate(number1, operator, number2);
@@ -55,7 +62,7 @@ acButton.addEventListener('click', () => {
     number1 = undefined;
     number2 = undefined;
     operator = undefined;
-    input = ' ';
+    input = undefined;
     displayResult.textContent = ' ';
 });
 
@@ -142,4 +149,9 @@ function checkNumbersAndOperator() {
     } else {
         return false;
     }
+}
+
+function disablePointButton() {
+    pointButton.disabled = !isDisabled;
+    isDisabled = !isDisabled;
 }
