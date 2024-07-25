@@ -1,0 +1,20 @@
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.calculator-body{
+    display: flex;
+    flex-direction: row;
+}
+.calculator-result {
+    width: 100px;
+    height: 30px;
+    text-align: end;
+    background-color: grey;
+}
+.calculator-operations {
+    display: flex;
+    flex-direction: column;
+}

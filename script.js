@@ -1,3 +1,7 @@
+let number1;
+let operator;
+let number2;
+
 function operate(number_1, operator, number_2) {
     let result;
     switch (operator) {
