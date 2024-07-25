@@ -12,7 +12,8 @@
     width: 100px;
     height: 30px;
     text-align: end;
-    background-color: grey;
+    font-size: 25px;
+    background-color: lightgray;
 }
 .calculator-operations {
     display: flex;
